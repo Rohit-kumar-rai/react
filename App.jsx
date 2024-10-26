@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+
+import './App.css'
+import Navbar from "./Navbar";
 export default function App() {
   const [search, setSearch] = useState("keyword");
   const [count, setCount] = useState(0);
@@ -22,7 +24,8 @@ export default function App() {
 
   return (
     <>
-      <input type="text" onChange={handleChange} value={search} />
+    <Navbar/>
+      <input className="search-input" type="text" onChange={handleChange} value={search} />
       <button onClick={handleClick}>search</button>
       <div className="container">
         {data.map((data) => {
